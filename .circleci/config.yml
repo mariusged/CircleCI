@@ -37,10 +37,9 @@
           
     workflows:
       version: 2
-      build-master:
+      build-master-develop:
         jobs:
           - build:
-              context: TestDeployment
               filters:
                 branches:
                   only: 
