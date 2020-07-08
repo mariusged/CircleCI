@@ -10,6 +10,9 @@ addons:
   ssh_known_hosts:
     - 94.130.59.82
 
+deploy:
+  - ssh-keyscan -H 94.130.59.82 >> ~/.ssh/known_hosts
+  - ssh $SSH_USER@$SSH_HOST 'cd /var/Wordpress/ && ./restart.sh'
 
 before_install:
   - docker build -t $IMAGE_NAME:latest-travis .
