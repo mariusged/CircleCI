@@ -6,5 +6,5 @@ services:
 
 before_install:
   - docker build -t $IMAGE_NAME:latest-travis .
-  - $DOCKER_PASSWORD | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin https://hub.docker.com/repository/docker/finstreet/test-deployment
   - docker push $IMAGE_NAME:latest-travis
