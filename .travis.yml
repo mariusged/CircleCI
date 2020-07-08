@@ -12,4 +12,5 @@ jobs:
       script:
       - echo docker build -t $IMAGE_NAME:latest-travis .
       - echo docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+      - echo docker ps -a
       - echo docker push $IMAGE_NAME:latest-travis
