@@ -9,4 +9,4 @@ jobs:
       script:
       - echo docker docker build -t $IMAGE_NAME:latest .
       - echo docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-      - docker push $IMAGE_NAME:latest
+      - echo docker push $IMAGE_NAME:latest
