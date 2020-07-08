@@ -5,7 +5,7 @@ env:
 
 jobs:
   include:
-    - stage: build docker image
+    - stage: build docker images
       script:
       - echo docker docker build -t $IMAGE_NAME:latest .
       - echo docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
