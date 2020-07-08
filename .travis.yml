@@ -1,3 +1,5 @@
+language: minimal
+
 env:
   - IMAGE_NAME=finstreet/test-deployment
 
