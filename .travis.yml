@@ -1,5 +1,3 @@
-language: ruby
-
 env:
   - IMAGE_NAME=finstreet/test-deployment
 
