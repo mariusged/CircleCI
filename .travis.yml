@@ -1,4 +1,4 @@
-language: node_js
+language: ruby
 
 env:
   - IMAGE_NAME=finstreet/test-deployment
@@ -10,3 +10,6 @@ before_install:
   - echo docker build -t $IMAGE_NAME:latest-travis .
   - echo docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
   - echo docker push $IMAGE_NAME:latest-travis
+
+script:
+  - bundle exec rake test
