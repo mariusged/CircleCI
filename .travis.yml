@@ -6,5 +6,6 @@ services:
 
 before_install:
   - docker build -t $IMAGE_NAME:latest-travis .
+  - echo $DOCKER_USERNAME
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   - docker push $IMAGE_NAME:latest-travis
