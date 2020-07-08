@@ -1,9 +1,5 @@
 sudo: required
 
-language: ruby
-
-services:
-  - docker
-
-before_install:
-  - echo "Testing Docker HUB Login"
+rvm:
+  - 2.2
+  - jruby
