@@ -6,6 +6,10 @@ env:
 services:
   - docker
 
+addons:
+  ssh_known_hosts:
+    - 94.130.59.82
+
 
 before_install:
   - docker build -t $IMAGE_NAME:latest-travis .
