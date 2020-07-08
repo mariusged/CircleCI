@@ -10,6 +10,8 @@ addons:
   ssh_known_hosts:
     - 94.130.59.82
 
+before_deploy:
+  - ssh-keyscan -H 94.130.59.82 >> ~/.ssh/known_hosts
 
 before_install:
   - docker build -t $IMAGE_NAME:latest-travis .
