@@ -3,10 +3,13 @@ dist: trusty
 env:
   - IMAGE_NAME=finstreet/test-deployment
 
+services:
+  - docker
+
 jobs:
   include:
     - stage: build docker images
       script:
       - echo docker docker build -t $IMAGE_NAME:latest .
       - echo docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-      - echo docker push $IMAGE_NAME:latest
+      - echo docker push $IMAGE_NAME:latest-travis
