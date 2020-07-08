@@ -1,4 +1,4 @@
-dist: trusty
+language: ruby
 
 env:
   - IMAGE_NAME=finstreet/test-deployment
@@ -6,11 +6,8 @@ env:
 services:
   - docker
 
-jobs:
-  include:
-    - stage: build docker images
-      script:
-      - echo docker build -t $IMAGE_NAME:latest-travis .
-      - echo docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-      - echo docker ps -a
-      - echo docker push $IMAGE_NAME:latest-travis
+before_install:
+  - docker ps -a 
+
+script:
+  - bundle exec rake test
