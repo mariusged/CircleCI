@@ -1,6 +1,8 @@
 language: minimal
+
 env:
 - IMAGE_NAME=finstreet/test-deployment
+
 services:
 - docker
 
@@ -25,6 +27,6 @@ deploy:
   script: ssh $SSH_USER@$SSH_HOST 'cd /var/Wordpress/ && ./restart.sh'
 
 before_install:
-  - docker build -t $IMAGE_NAME:latest-travis .
+  - docker build -t $IMAGE_NAME:latest-Travis-$Travis_Branch .
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-  - docker push $IMAGE_NAME:latest-travis
+  - docker push $IMAGE_NAME:latest-Travis-$Travis_Branch
