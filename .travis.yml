@@ -27,6 +27,6 @@ deploy:
   script: ssh $SSH_USER@$SSH_HOST 'cd /var/Wordpress/ && ./restart.sh'
 
 before_install:
-  - docker build -t $IMAGE_NAME:latest-Travis-$TRAVIS_QUEUE_BRANCH .
+  - docker build -t $IMAGE_NAME:latest-Travis-$TRAVIS_BRANCH .
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-  - docker push $IMAGE_NAME:latest-Travis-$TRAVIS_QUEUE_BRANCH
+  - docker push $IMAGE_NAME:latest-Travis-$TRAVIS_BRANCH
