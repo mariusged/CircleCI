@@ -6,6 +6,10 @@ env:
 services:
   - docker
 
+git:
+  depth: 25
+  quiet: true
+
 addons:
   ssh_known_hosts:
     - 94.130.59.82
