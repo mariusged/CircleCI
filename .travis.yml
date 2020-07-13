@@ -1,7 +1,7 @@
 language: minimal
 
 env:
-- IMAGE_NAME=finstreet/test-deployment
+- IMAGE_NAME=30062020/mariusdeployment
 
 services:
 - docker
