@@ -2,7 +2,7 @@
     jobs:
       build:
         environment:
-          IMAGE_NAME: 30062020/mariusdeployment
+          IMAGE_NAME: finstreet/test-deployment
         docker:
           - image: docker:17.05.0-ce-git
         steps:
