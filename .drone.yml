@@ -5,4 +5,4 @@ steps:
 - name: build
   image: docker
   commands:
-    - docker build -t $DRONE_REPO.latest
+    - docker build -t $DRONE_REPO.latest-Drone
