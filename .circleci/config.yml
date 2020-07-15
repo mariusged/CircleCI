@@ -20,7 +20,7 @@
 
           - run:
               name: Deploy over SSH
-              command: ssh $SSH_USER@$SSH_HOST 'cd /var/Wordpress/ && ls -a'
+              command: ssh $SSH_USER@$SSH_HOST 'cd /var/Wordpress/ && ./restart.sh'
 
 
           
