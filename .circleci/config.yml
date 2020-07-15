@@ -40,7 +40,6 @@
       build-master:
         jobs:
           - build:
-              context: TestDeployment
               filters:
                 branches:
                   only: 
