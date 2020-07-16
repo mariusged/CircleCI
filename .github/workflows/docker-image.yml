@@ -17,4 +17,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --tag finstreet/test-deployment:latest
     - name: Login to Docker hub
+      env:
+           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
