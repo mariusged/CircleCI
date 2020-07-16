@@ -14,17 +14,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: set environment variables
+      with:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }} 
+        IMAGE_NAME: 'finstreet/test-deployment'
     - name: Docker build
-      run: docker build . --tag finstreet/test-deployment:latest
+      run: docker build . --tag ${IMAGE_NAME}:latest
     
-    - name: Docker login
-      env:
-           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}      
+    - name: Docker login 
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     
     - name: Docker push
-      run: docker push finstreet/test-deployment:latest
+      run: docker push ${IMAGE_NAME}:latest
     
     - name: ls -a via ssh
       uses: fifsky/ssh-action@master
