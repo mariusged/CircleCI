@@ -14,14 +14,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      env:
-           IMAGE_NAME: ${{ secrets.IMAGE_NAME }}
-    - name: Build the Docker image
-      run: docker build . --tag $IMAGE_NAME:latest
-    - name: Login to Docker hub
+    - name: Docker build push
       env:
            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
            DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+           IMAGE_NAME: ${{ secrets.IMAGE_NAME }}
+           
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-    - name: Push to Docker hub
-      run: docker push $IMAGE_NAME:latest
+           docker build . --tag $IMAGE_NAME:latest
+           docker push $IMAGE_NAME:latest
