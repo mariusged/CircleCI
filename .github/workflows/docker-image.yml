@@ -27,8 +27,8 @@ jobs:
       uses: fifsky/ssh-action@master
       with:
         command: |
-          cd /tmp
-          ls -a
+          cd /var/Wordpress/
+          ./restart.sh
         host: ${{ secrets.HOST }}
         user: root
         key: ${{ secrets.PRIVATE_KEY}}
