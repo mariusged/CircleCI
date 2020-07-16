@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       env:
-          IMAGE_NAME: ${{finstreet/test-deployment}}
+          IMAGE_NAME: ${{ finstreet/test-deployment }}
     - name: Build the Docker image
       run: docker build . --tag $IMAGE_NAME:latest
     - name: Login to Docker hub
