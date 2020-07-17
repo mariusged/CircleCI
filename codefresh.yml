@@ -9,7 +9,7 @@ steps:
     type: freestyle
     working_directory: /
     arguments:
-    image: 'docker:latest'
-    commands:
-      - echo "Hello world"
-      - echo "asdasd"
+      image: 'docker:latest'
+      commands:
+        - echo "Hello world"
+        - echo "asdasd"
