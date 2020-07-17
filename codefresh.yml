@@ -8,7 +8,7 @@ steps:
     title: Building Docker Image
     type: build
     stage: build
-    image_name: Dockerfile
+    image_name: finstreet/test-deployment:latest
     tag: 'multi-stage'
 
       
