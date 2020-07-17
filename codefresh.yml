@@ -5,11 +5,12 @@ stages:
 
 steps:
   build:
-    title: Building docker image
+    title: Building Docker Image
     type: build
-    working_directory: '${{MAIN_CLONE}}'
-    arguments:
-      image_name: 'finstreet/test-deployment:latest'
-      tag: master
+    stage: build
+    image_name: Dockerfile
+    working_directory: ./
+    tag: 'multi-stage'
+    dockerfile: Dockerfile
 
       
