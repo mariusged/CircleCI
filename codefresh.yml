@@ -11,5 +11,5 @@ steps:
     arguments:
       image: 'docker:latest'
       commands:
-        - echo "Hello world"
+        - docker version
         - echo "asdasd"
