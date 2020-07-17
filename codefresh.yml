@@ -11,6 +11,5 @@ steps:
     image_name: Dockerfile
     working_directory: ./
     tag: 'multi-stage'
-    dockerfile: Dockerfile
 
       
