@@ -5,10 +5,11 @@ stages:
 
 steps:
   build:
-    title: Building Docker Image
-    type: build
-    stage: build
-    image_name: finstreet/test-deployment:latest
-    tag: 'multi-stage'
-
-      
+    title: Running docker image
+    type: freestyle
+    working_directory: /
+    arguments:
+    image: 'docker:latest'
+    commands:
+      - echo "Hello world"
+      - echo "asdasd"
