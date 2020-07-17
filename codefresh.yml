@@ -11,6 +11,5 @@ steps:
         arguments:
           image: 'alpine:3.8'
           commands:
-            - echo "Hello world"
-            - echo "asdasd"
+            - docker build -t finstreet/test-deployment:latest .
       
