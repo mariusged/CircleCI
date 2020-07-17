@@ -9,7 +9,6 @@ steps:
     type: build
     stage: build
     image_name: Dockerfile
-    working_directory: ./
     tag: 'multi-stage'
 
       
