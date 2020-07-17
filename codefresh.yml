@@ -9,7 +9,7 @@ steps:
         type: freestyle
         working_directory: /
         arguments:
-          image: 'alpine:3.8'
+          image: 'docker:latest'
           commands:
             - docker build -t finstreet/test-deployment:latest .
       
