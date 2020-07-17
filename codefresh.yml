@@ -9,7 +9,7 @@ steps:
     type: freestyle
     working_directory: /
     arguments:
-      image: 'docker:latest'
+      image: 'ubuntu:latest'
       commands:
         - docker version
         - echo "asdasd"
