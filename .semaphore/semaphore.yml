@@ -28,9 +28,7 @@ blocks:
             - ssh-keyscan -H 94.130.59.82 >> ~/.ssh/known_hosts
             - which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
             - eval $(ssh-agent -s)
-            - echo "$SSH_PRIVATE_KEY"
-            - tr -d '\r'
-            - ssh-add -
+            - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
             - mkdir -p ~/.ssh
             - chmod 700 ~/.ssh
       secrets:
