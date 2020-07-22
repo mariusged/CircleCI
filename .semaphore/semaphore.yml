@@ -20,3 +20,12 @@ blocks:
       env_vars:
         - name: IMAGE_NAME
           value: finstreet/test-deployment
+  - name: Deployment
+    task:
+      jobs:
+        - name: SSH Deployment
+          commands:
+            - eval $(ssh-agent -s)
+            - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+            - mkdir -p ~/.ssh
+            - chmod 700 ~/.ssh
