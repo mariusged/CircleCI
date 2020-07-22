@@ -11,4 +11,6 @@ blocks:
         - name: docker build
           commands:
             - checkout
-            - docker build -t your-image .
+            - 'docker build -t finstreet/test-deployment:latest .'
+            - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+            - docker push
