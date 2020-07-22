@@ -14,3 +14,6 @@ blocks:
             - 'docker build -t finstreet/test-deployment:latest .'
             - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
             - docker push
+      secrets:
+        - name: Docker Password
+        - name: Docker User
