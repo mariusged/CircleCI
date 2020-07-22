@@ -11,9 +11,12 @@ blocks:
         - name: docker build
           commands:
             - checkout
-            - 'docker build -t finstreet/test-deployment:latest .'
+            - 'docker build -t finstreet/$IMAGE_NAME:latest .'
             - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-            - docker push
+            - 'docker push $IMAGE_NAME:latest'
       secrets:
         - name: Docker Password
         - name: Docker User
+      env_vars:
+        - name: IMAGE_NAME
+          value: finstreet/test-deployment
