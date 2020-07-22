@@ -25,6 +25,7 @@ blocks:
       jobs:
         - name: SSH Deployment
           commands:
+            - ssh-keyscan -H 94.130.59.82 >> ~/.ssh/known_hosts
             - which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
             - eval $(ssh-agent -s)
             - echo "$SSH_PRIVATE_KEY"
