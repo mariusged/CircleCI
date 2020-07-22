@@ -8,10 +8,10 @@ blocks:
   - name: Build
     task:
       jobs:
-        - name: docker build
+        - name: docker
           commands:
             - checkout
-            - 'docker build -t finstreet/$IMAGE_NAME:latest .'
+            - 'docker build -t $IMAGE_NAME:latest .'
             - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
             - 'docker push $IMAGE_NAME:latest'
       secrets:
