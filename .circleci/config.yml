@@ -9,7 +9,17 @@
           - checkout
           - setup_remote_docker
         
-          
+          - run:
+              name: Build Docker image
+              command: docker build -t $IMAGE_NAME:latest .
+
+          - run:
+              name: Login Docker
+              command: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+               
+          - run:
+              name: Push Docker image
+              command: docker push $IMAGE_NAME:latest          
           - add_ssh_keys:
               fingerprints:
                 - "56:7b:3d:65:22:31:78:9c:a5:73:80:78:e5:6e:0e:96"
