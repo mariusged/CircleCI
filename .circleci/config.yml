@@ -31,7 +31,8 @@
 
           - run:
               name: Deploy over SSH
-              command: ssh $SSH_USER@$SSH_HOST 'cd /var/Wordpress/circleci && ./circleci-restart.sh'
+              command: ssh $SSH_USER@SSH_HOST 'export GOOGLE_APPLICATION_CREDENTIALS="/var/googlekey/GoogleKey.json'
+              command: ssh $SSH_USER@$SSH_HOST 'cd /var/Wordpress/ && ./restart.sh'
 
 
           
