@@ -11,7 +11,7 @@
         
           - run:
               name: Build Docker image
-              command: docker build -t $IMAGE_NAME:latest-master .
+              command: docker build -t $IMAGE_NAME:latest .
 
           - run:
               name: Login Docker
@@ -31,7 +31,7 @@
 
           - run:
               name: Deploy over SSH
-              command: ssh $SSH_USER@$SSH_HOST 'cd /var/Wordpress/ && ./restart.sh'
+              command: ssh $SSH_USER@$SSH_HOST 'cd /var/Wordpress/ && ./circleci-restart.sh'
 
 
           
