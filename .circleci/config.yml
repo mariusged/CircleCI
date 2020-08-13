@@ -19,7 +19,7 @@
                
           - run:
               name: Push Docker image
-              command: docker push $IMAGE_NAME:latest-master          
+              command: docker push $IMAGE_NAME:latest          
           - add_ssh_keys:
               fingerprints:
                 - "af:06:17:c7:98:0c:6d:b9:51:47:36:39:9a:31:da:9a"
