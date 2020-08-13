@@ -1,7 +1,0 @@
-stages:
-  - build
-  - Deploy
-
-build:
-  stage: build
-  
