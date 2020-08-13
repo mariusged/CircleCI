@@ -1,5 +1,0 @@
-codeship_example:
-  build:
-    image: codeship_example
-    dockerfile: Dockerfile
-      args: docker build -t finstreet/test-deployment:latest
