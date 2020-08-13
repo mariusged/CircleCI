@@ -31,7 +31,7 @@
 
           - run:
               name: Deploy over SSH
-              command: ssh $SSH_USER@$SSH_HOST 'cd /var/Wordpress/ && ./circleci-restart.sh'
+              command: ssh $SSH_USER@$SSH_HOST 'cd /var/Wordpress/circleci && ./restart.sh'
 
 
           
